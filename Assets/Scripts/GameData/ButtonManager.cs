@@ -6,6 +6,22 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour {
 
+    public GameObject Panel, Panel2, P3, p;
+
+    
+    public void getPannel(GameObject pnl)
+    {
+        Panel2 = pnl;
+        Panel2.gameObject.SetActive(true);
+    }
+
+    public void getPannel2(GameObject pnl)
+    {
+        P3 = pnl;
+        P3.gameObject.SetActive(true);
+    }
+
+
     public void NewGameBtn(string newGameLevel)
     {
         SceneManager.LoadSceneAsync(newGameLevel);
@@ -16,9 +32,24 @@ public class ButtonManager : MonoBehaviour {
         Application.Quit();
     }
 
-    public void SettingsBtn(Transform menuTransform)
+    public void SettingsBtn(GameObject pan)
     {
-       
-        Camera.main.transform.LookAt(menuTransform.position);
+        Panel = pan;
+
+        Panel.gameObject.SetActive(false);
+        getPannel(Panel2);
+         }
+
+    public void BackBtn(GameObject pan)
+    {      
+        p = pan;
+        p.gameObject.SetActive(false);
+        
+        getPannel(P3);
+    }
+
+    public void Start()
+    {
+        Panel2.gameObject.SetActive(false);
     }
 }

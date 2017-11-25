@@ -25,7 +25,10 @@ public class Doors : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && timeleft == 0.0f)
-            CheckDoor();
+        { CheckDoor();
+            if (open) AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.DoorClose]);
+            else AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.DoorOpen]);
+        }
 
         if (IsOpeningDoor)
             OpenAndCloseDoor();
@@ -54,13 +57,16 @@ public class Doors : MonoBehaviour
 
         if (open)
         {
+            
             currentdoor.localRotation = Quaternion.Slerp(currentdoor.localRotation, Quaternion.Euler(0, 0, 0), timeleft);
-           
+            
         }
         else
         {
+            
             currentdoor.localRotation = Quaternion.Slerp(currentdoor.localRotation, Quaternion.Euler(0, 90, 0), timeleft);
-          
+            
+
         }
 
         if (timeleft > 1)

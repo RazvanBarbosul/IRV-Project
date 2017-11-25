@@ -6,7 +6,7 @@ using UnityEngine;
 public class PickupItem : MonoBehaviour
 {
     public int itemID;
-    public GameObject knf;
+    
     public InventoryItem item;
     public InventoryEntry uiEntry;
     private bool canPick = false;
@@ -17,7 +17,7 @@ public class PickupItem : MonoBehaviour
     void Start()
     {
         GameData.OnDataInit(Init);
-        knf.GetInstanceID();
+        
     }
 
     private void Init()
@@ -56,7 +56,7 @@ public class PickupItem : MonoBehaviour
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
             canPick = false;
-            Destroy(knf,1);
+            
             AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.Knife]);
             GameData.PickItem(item);
             InventoryPane.Refresh();

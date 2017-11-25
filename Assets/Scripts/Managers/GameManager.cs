@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         {
             GameData.Save();
             Debug.Log("Game Saved");
+            print("game saved");
         }
         
     }

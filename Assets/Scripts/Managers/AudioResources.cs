@@ -20,6 +20,8 @@ public enum SFX
    Force,
    Luck,
    Knife,
+   DoorOpen,
+   DoorClose,
 
 }
 

@@ -10,7 +10,8 @@ public enum GameLocation
     Location1,
     Location2,
     Location3,
-
+    Projector2,
+    Projector1,
     // 
     Count
 }
@@ -22,7 +23,7 @@ public class Checkpoint : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //var value = Enum.GetValues(typeof(GameLocation));
+        var value = Enum.GetValues(typeof(GameLocation));
     }
 
     // Update is called once per frame

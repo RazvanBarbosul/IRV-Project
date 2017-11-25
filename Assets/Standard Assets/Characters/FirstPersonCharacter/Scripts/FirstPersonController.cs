@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
+
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
@@ -86,6 +87,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
+            
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;

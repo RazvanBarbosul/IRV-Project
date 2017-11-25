@@ -15,12 +15,22 @@ public enum BackgroundMusic
     Music2,
 }
 
+public enum SFX
+{
+   Force,
+   Luck,
+   Knife,
+
+}
+
 public class AudioResources : MonoBehaviour
 {
 
   //  public AudioSource collect_coin;
     public AudioSource[] backgroundMusic;
     public AudioSource[] ambientalMusic;
+    public AudioSource[] SFX;
+    public AudioSource[] voice;
 
     public static AudioResources Instance;
 

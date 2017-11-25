@@ -34,14 +34,13 @@ public class PickupItem : MonoBehaviour
         if (!found)
         {
             Debug.LogWarning("Pickup Item has an invalid itemID");
-            Destroy(gameObject,3);
+            Destroy(gameObject,1);
             GameData.RemoveCallback(Init);
         }
     }
 
     void SetItem(InventoryItem item)
     {
-        // TODO
         this.item = item;
         uiEntry.SetItem(item);
     }
@@ -57,11 +56,11 @@ public class PickupItem : MonoBehaviour
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
             canPick = false;
-            Destroy(knf);
+            Destroy(knf,1);
             AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.Knife]);
             GameData.PickItem(item);
             InventoryPane.Refresh();
-           // Destroy(gameObject, 7);
+            Destroy(gameObject, 1);
             GameData.RemoveCallback(Init);
         }
     }

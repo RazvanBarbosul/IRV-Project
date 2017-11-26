@@ -22,6 +22,8 @@ public enum SFX
    Knife,
    DoorOpen,
    DoorClose,
+   GoGoGo,
+   Finnish,
 
 }
 

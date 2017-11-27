@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Teleport : MonoBehaviour {
     public Vector3 pos;
     public GameObject player;
+    public Text loadC;
+    public Text savC;
     public int saveCounter = 0;
     public int loadCounter = 0;
     // Use this for initialization
@@ -34,6 +37,7 @@ public class Teleport : MonoBehaviour {
             pos = player.transform.position;
         Debug.Log(pos);
         saveCounter++;
+        savC.text = saveCounter.ToString();
         Debug.Log(saveCounter);
 
     }
@@ -42,5 +46,6 @@ public class Teleport : MonoBehaviour {
     {
         player.transform.position = pos;
         loadCounter++;
+        loadC.text = loadCounter.ToString();
     }
 }

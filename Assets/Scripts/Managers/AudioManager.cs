@@ -22,6 +22,7 @@ public class AudioManager
     public static List<AudioSource> voiceList = new List<AudioSource>();
     public static List<AudioSource> ambientList = new List<AudioSource>();
     private static bool initialized;
+    private static bool playing = false;
 
     public static void Init()
     {
@@ -137,4 +138,14 @@ public class AudioManager
     {
 
     }
+
+    public static bool SFXIsPlaying(AudioSource source)
+    {
+        if (source.isPlaying)
+            playing = true;
+        else playing = false;
+        return playing;
+    }
+
+
 }

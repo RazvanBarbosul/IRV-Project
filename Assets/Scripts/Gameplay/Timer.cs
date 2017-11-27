@@ -9,8 +9,9 @@ public class Timer : MonoBehaviour {
     
     private float startTime;
     private float t;
+    private float rr;
     private bool finnished = false;
-    private bool started = false;
+    public bool started = false;
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
@@ -18,8 +19,13 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        IsStarted();
         if (finnished)
+        {
+            startTime = t;
             return;
+        }
+       
         if (started)
         {
              t = Time.time - startTime;
@@ -34,8 +40,24 @@ public class Timer : MonoBehaviour {
 
     public void Finnish()
     {
-        finnished = true;
-        timerText.color = Color.yellow;
+        if (started)
+        {
+            finnished = true;
+            rr = t;
+            timerText.color = Color.yellow;
+        }
+    }
+
+    public bool IsStarted()
+    {
+        return started;
+    }
+
+    public void Restart()
+    {
+        finnished = false;
+        rr = t;
+        timerText.color = Color.white;
     }
 
     public void Starting()

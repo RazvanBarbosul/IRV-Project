@@ -77,6 +77,7 @@ public class GameData
         {
             NewGame();
             Save();
+            Load();
         }
     }
 
@@ -86,16 +87,11 @@ public class GameData
         Instance.pickups.Clear();
 
         // list of InventorItems
-        Instance.items.Add(new InventoryItem(0, 1, 10, "Sword of...", "Legendary something"));
-        Instance.items.Add(new InventoryItem(1, 2, 5, "Armor", "ASidgoiasd"));
-        Instance.items.Add(new InventoryItem(2, 1, 10, "Boots", "Info"));
-        Instance.items.Add(new InventoryItem(3, 1, 10, "Whatever", "adsfhasdfsdf"));
+        
 
-        Instance.pickups.Add(new InventoryItem(4, 1, 12, "Item 4", "Description for item 4"));
-        Instance.pickups.Add(new InventoryItem(5, 1, 7, "Item 5", "Description for item 5"));
-        Instance.pickups.Add(new InventoryItem(7, 1, 7, "Item 6", "Description for item 6"));
-        Instance.pickups.Add(new InventoryItem(9, 3, 7, "Item 6", "Description for item 9"));
-        Instance.pickups.Add(new InventoryItem(10, 1, 7, "Item 6", "Description for item 10"));
+        Instance.pickups.Add(new InventoryItem(4, 1, 12, "Taie bine", "Cutit", false));
+        Instance.pickups.Add(new InventoryItem(5, 1, 7, "O cutie", "Cutie", false));
+      
 
         var c1 = new ChestBox("ChestBox 1", "Something 1", GameLocation.Location1);
         var c2 = new ChestBox("ChestBox 2", "Something 2", GameLocation.Location2);

@@ -7,13 +7,14 @@ public class InventoryItem
     public InventoryItem()
     { }
 
-    public InventoryItem(int ID, int icontID, int level, string name, string description)
+    public InventoryItem(int ID, int icontID, int level, string name, string description, bool isFound)
     {
         this.ID = ID;
         this.iconID = icontID;
         this.level = level;
         this.name = name;
         this.description = description;
+        this.isFound = isFound;
     }
 
     [XmlElement("ID")]
@@ -30,5 +31,8 @@ public class InventoryItem
 
     [XmlElement("description")]
     public string description { get; private set; }
+
+    [XmlElement("found")]
+    public bool isFound { get; private set; }
 }
 

@@ -35,10 +35,10 @@ public class Teleport : MonoBehaviour {
     {
        
             pos = player.transform.position;
-        Debug.Log(pos);
+       // Debug.Log(pos);
         saveCounter++;
         savC.text = saveCounter.ToString();
-        Debug.Log(saveCounter);
+       // Debug.Log(saveCounter);
 
     }
 

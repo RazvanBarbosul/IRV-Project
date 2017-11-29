@@ -10,7 +10,7 @@ public class PickupItem : MonoBehaviour
     public InventoryItem item;
     public InventoryEntry uiEntry;
     private bool canPick = false;
-   
+  
 
 
     // Use this for initialization
@@ -28,6 +28,7 @@ public class PickupItem : MonoBehaviour
             if (item.ID == itemID)
             {
                 found = true;
+                Debug.Log("Am gasit id`ul itemului");
                 SetItem(item);
             }
         }
@@ -50,8 +51,6 @@ public class PickupItem : MonoBehaviour
     {
         
         transform.Rotate(new Vector3(0, Time.deltaTime * 70, 0));
-            
-       
 
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
@@ -60,7 +59,7 @@ public class PickupItem : MonoBehaviour
             AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.Knife]);
             GameData.PickItem(item);
             InventoryPane.Refresh();
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
             GameData.RemoveCallback(Init);
         }
     }

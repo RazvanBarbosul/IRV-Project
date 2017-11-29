@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class FinnishTimer : MonoBehaviour {
     public ParticleSystem particles1;
@@ -12,6 +13,7 @@ public class FinnishTimer : MonoBehaviour {
     public ParticleSystem particles6;
     public ParticleSystem particles7;
     public AudioSource mus;
+    private string script;
 
     private Timer tim;
 
@@ -19,6 +21,8 @@ public class FinnishTimer : MonoBehaviour {
 
     public Camera end;
     public GameObject play;
+    public GameObject mvm;
+
 
     public LayerMask mask;
     private float startTime = 0;
@@ -49,8 +53,10 @@ public class FinnishTimer : MonoBehaviour {
     IEnumerator SongPLaying()
     {
         cam.enabled = false;
-       
-        end.enabled = true;
+       mvm.GetComponent<FirstPersonController>().enabled = false;
+       mvm.GetComponent<Teleport>().enabled = false;
+
+         end.enabled = true;
         particles1.Play();
         particles2.Play();
         particles3.Play();
@@ -58,7 +64,7 @@ public class FinnishTimer : MonoBehaviour {
         particles5.Play();
         particles6.Play();
         particles7.Play();
-        while (startTime < 15)
+        while (startTime < 17)
         {
             yield return new WaitForSeconds(t);
             startTime += t;
@@ -68,10 +74,13 @@ public class FinnishTimer : MonoBehaviour {
     }
     private void Swtch()
     {
-        end.enabled = false;
+        //end.enabled = false;
         
-       cam.enabled = true;
-        // end.enabled = false;
+
+          cam.enabled = true;
+        mvm.GetComponent<FirstPersonController>().enabled = true;
+        mvm.GetComponent<Teleport>().enabled = true;
+        end.enabled = false;
         particles1.Stop();
         particles2.Stop();
         particles3.Stop();
@@ -89,10 +98,10 @@ public class FinnishTimer : MonoBehaviour {
         //startTime = Time.time;
         if (tim.IsStarted())
         {
-            
+            SceneManager.LoadSceneAsync("Level3", LoadSceneMode.Additive);
             tim.Finnish();
             AudioManager.PlaySFX(AudioResources.Instance.SFX[(int)SFX.Finnish]);
-            SceneManager.LoadSceneAsync("Level3", LoadSceneMode.Additive);
+            
 
 
 

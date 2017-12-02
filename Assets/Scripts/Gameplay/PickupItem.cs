@@ -30,6 +30,7 @@ public class PickupItem : MonoBehaviour
                 found = true;
                 Debug.Log("Am gasit id`ul itemului");
                 SetItem(item);
+                
             }
         }
         if (!found)

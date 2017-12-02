@@ -58,6 +58,7 @@ public class GameData
             {
                 Instance = serializer.Deserialize(stream) as GameData;
                 stream.Close();
+                
 
                 Debug.Log("Gameplay loaded: " + gameDataFile);
                 Debug.Log(Instance.pickups.Count);

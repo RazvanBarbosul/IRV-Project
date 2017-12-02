@@ -2549,11 +2549,11 @@ GameObject:
   m_Component:
   - component: {fileID: 668456658}
   m_Layer: 0
-  m_Name: GUI
+  m_Name: PICKUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &668456658
 Transform:
@@ -2562,13 +2562,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668456657}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7635897, z: -0, w: 0.6457019}
+  m_LocalPosition: {x: 39.40703, y: -1.8899999, z: 445.60056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1563253729}
-  m_Father: {fileID: 761634207}
-  m_RootOrder: 0
+  - {fileID: 761634207}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &671059550
 Prefab:
@@ -3431,7 +3432,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &761634206
 MeshFilter:
@@ -3448,13 +3449,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 761634201}
-  m_LocalRotation: {x: -0, y: -0.7635897, z: -0, w: 0.6457019}
-  m_LocalPosition: {x: 39.52, y: 0.92, z: 444.93}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6800127, y: 2.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 668456658}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Children: []
+  m_Father: {fileID: 668456658}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -99.563, z: 0}
 --- !u!198 &766882957 stripped
 ParticleSystem:
@@ -4024,7 +4024,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133289202}
   m_LocalRotation: {x: 0.00000029456558, y: -0.56117374, z: 0.00000021935341, w: 0.82769805}
-  m_LocalPosition: {x: -195.1, y: 11.1, z: 14}
+  m_LocalPosition: {x: -207.91, y: -23, z: -9.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1572032038}
@@ -5592,7 +5592,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.24, y: 3.13, z: 2.34}
+  m_Size: {x: 8.86, y: 4.27, z: 4.96}
   m_Center: {x: -1.99, y: 1.4, z: 0.14}
 --- !u!4 &1022208079
 Transform:

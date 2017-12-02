@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -13,6 +14,8 @@ public class FinnishTimer : MonoBehaviour {
     public ParticleSystem particles6;
     public ParticleSystem particles7;
     public AudioSource mus;
+    public Text txt;
+    public Text txt2;
     private string script;
 
     private Timer tim;
@@ -37,6 +40,8 @@ public class FinnishTimer : MonoBehaviour {
         particles5.Stop();
         particles6.Stop();
         particles7.Stop();
+        txt.enabled = false;
+        txt2.enabled = false;
         startTime = Time.time;
     }
     private bool ok = false;
@@ -64,7 +69,9 @@ public class FinnishTimer : MonoBehaviour {
         particles5.Play();
         particles6.Play();
         particles7.Play();
-        while (startTime < 17)
+        txt.enabled = true;
+        txt2.enabled = true;
+        while (startTime < 13.5)
         {
             yield return new WaitForSeconds(t);
             startTime += t;
@@ -88,6 +95,8 @@ public class FinnishTimer : MonoBehaviour {
         particles5.Stop();
         particles6.Stop();
         particles7.Stop();
+        txt.enabled = false;
+        txt2.enabled = false;
         Destroy(play);
         tim.Restart();
         

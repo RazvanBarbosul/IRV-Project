@@ -12,9 +12,9 @@ public class Teleport : MonoBehaviour {
     public int loadCounter = 0;
     // Use this for initialization
     void Start () {
-        
-        
-	}
+        pos = player.transform.position;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

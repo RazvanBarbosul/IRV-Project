@@ -29,7 +29,7 @@ public class FinnishTimer : MonoBehaviour {
 
     public LayerMask mask;
     private float startTime = 0;
-    private float t= 0.1f;
+    private float t= 1f;
     // Use this for initialization
     void Start() {
         tim = Timer.FindObjectOfType<Timer>();
@@ -71,7 +71,7 @@ public class FinnishTimer : MonoBehaviour {
         particles7.Play();
         txt.enabled = true;
         txt2.enabled = true;
-        while (startTime < 13.5)
+        while (startTime < 16)
         {
             yield return new WaitForSeconds(t);
             startTime += t;

@@ -105,6 +105,22 @@ public class AudioManager
         source.PlayDelayed(delay);
     }
 
+    public static void PlaySFXLoop(AudioSource source, float delay = 0)
+    {
+        source.volume = volumeSFX;
+        source.loop = true;
+        source.PlayDelayed(delay);
+        
+    }
+
+    public static void StopSFXLoop(AudioSource source, float delay = 0)
+    {
+        source.volume = volumeSFX;
+        source.loop = false;
+        source.Stop();
+
+    }
+
     public static void PlayVoice(AudioSource source, float delay = 0)
     {
         source.volume = volumeVoice;

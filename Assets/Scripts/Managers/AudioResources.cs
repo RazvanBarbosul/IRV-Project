@@ -24,6 +24,7 @@ public enum SFX
    DoorClose,
    GoGoGo,
    Finnish,
+   Rewind,
 
 }
 

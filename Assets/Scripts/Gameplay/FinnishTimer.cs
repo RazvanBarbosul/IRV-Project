@@ -100,6 +100,7 @@ public class FinnishTimer : MonoBehaviour {
         Destroy(play);
         tim.Restart();
         
+        
     }
 
     private void OnTriggerEnter(Collider other) {
